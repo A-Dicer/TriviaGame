@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-us">
+ 	<head>
+   		
+   		<meta charset="UTF-8">
+    	<title>Super Fantastic Trivia Game</title>
+    	
+    	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    	<link rel="stylesheet" type="text/css" href="assets/css/style.css">  
+ 	
+ 		<script src="https://code.jquery.com/jquery-3.1.1.js"></script>  
+    	<script type="text/javascript" src="assets/javascript/TimeCircles.js"></script>  
+    	<script type="text/javascript" src="assets/javascript/app.js"></script>
+	
+	</head>
+
+	<body>
+		<h1>Super Fantastic Trivia Game!</h1>
+		<div id="bgImage"></div>
+		<div id="bgMain"></div>
+			<header>
+				<h2></h2>	
+				<!-- container for timer -->
+				<div class="container">
+	        		<div id="CountDownTimer" data-timer="10" style="width: 150px;"></div>
+	    		</div>
+				<div class="imgContainer small"></div>
+				<div class="playerInfo">
+					Player One <br>
+					Score: 10pts
+				</div>
+				
+			</header>
+			<main>	
+				<!-- holds player select -->
+				<div id="playerSelect">
+					<p></p>
+					<div class="circle cat" id="movies" value="Movies">
+						<img src="assets/images/movies.png" class="catImg">
+					</div>
+					<div class="circle cat" id="games" value="Games">
+						<img src="assets/images/games.png" class="catImg">
+					</div>
+					<div class="circle cat" id="tv" value="TV">
+						<img src="assets/images/tv.png" class="catImg">
+					</div>
+					<div class="circle cat" id="music" value="Music">
+						<img src="assets/images/music.png" class="catImg">
+					</div>
+
+					<div class="circle players" id="onePlayer" value="One">
+						<img src="assets/images/onePlayer.png" class="playerImg">
+					</div>
+					<div class="circle players" id="twoPlayer" value="Two">
+						<img src="assets/images/twoPlayer.png" class="playerImg">
+					</div>
+				</div>
+				
+				<!-- holds the question and answer divs -->
+				<section>
+					<div id="questionBox">
+						<p></p>
+					</div>
+					<div class="answerBox" id="choiceA"></div>
+					<div class="answerBox" id="choiceB"></div>
+					<div class="answerBox" id="choiceC"></div>
+					<div class="answerBox" id="choiceD"></div>	
+				</section>
+				<div class="imgContainer big"></div>
+				<h3></h3>
+    		</main>
+    		<footer>
+ 				<h5>©Copyright Andrew Dicer - 2017</h5>
+    		</footer>
+	</body>
+</html>

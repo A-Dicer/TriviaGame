@@ -1,0 +1,355 @@
+@font-face {
+    font-family: sparkly;
+    src: url(../fonts/sparkly.ttf);
+	}
+
+body {
+	/*height will be 484*/
+	position: relative;
+	margin: 200px auto;
+	height: 60px;
+	width: 800px;
+	border: solid #000 1px;
+	box-shadow: 2px 2px 3px;
+	overflow: auto;
+}
+
+header {
+	display: none;
+	text-align: center;
+	position: relative;
+	top: 50px;
+	width: 100%;
+	height: 50px;
+	border-bottom: solid #000 4px;
+	border-top: solid #000 4px;
+	background-color: #fff;	
+	z-index: 2;
+}
+
+main {
+	position: relative;
+	height: 400px;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	display: none ;
+	background-color: #ccc;
+	height: 25px;
+	width: 100%;
+	border-top: solid #000 1px;
+	text-align: center;
+	color: #000;
+	text-shadow: 1px 1px 1px #ccc;
+	z-index: 3;
+}
+
+span {
+	color: #BBFFBB;
+	text-shadow: 1px 1px 2px #000;
+}
+
+h1 {
+	position: fixed;
+	top: 168px;
+	width: 100%;
+	color: #000;
+	font-family: sparkly;
+	font-size: 100px;
+	z-index: 4;
+	text-shadow: 2px 2px 2px #fff;
+	padding-left: 20px;
+	white-space: nowrap;
+}
+
+h2 {
+	position: absolute;
+	display: none;
+	width: 100%;
+	padding-top: 10px;
+	font-size: 30px;
+	text-align: center;
+}
+
+h3 {
+	font-size: 40px;
+	position: absolute;
+	bottom: 30px;
+	width: 100%;
+	text-align: center;
+	text-shadow: 2px 2px 2px #ccc;
+	z-index: 5;
+}
+
+h4 {
+	text-shadow: 1px 1px 1px #ccc;
+}
+
+h5 {
+	margin-top: 5px;
+	bottom: 0;
+	font-size: 12px;
+	z-index: 5;
+}
+
+p{	
+	display: none;
+	color: #000;
+	padding: 20px;
+	text-shadow: 1px 1px 2px #ccc;
+	font-size: 30px;
+	border: solid #000 1px;
+	background-color: #fff;
+	margin: 0 20px;
+	box-shadow: 2px 2px 3px #000;
+	z-index: 4;
+}
+
+
+
+
+#play {
+	position: absolute;
+	width: 150px;
+	height: 50px;
+	bottom: -70px;
+	left: 325px;
+	box-shadow: 2px 2px 3px #000;
+	z-index: 4;
+}
+
+#bgImage {
+	position: absolute;
+	background-image: url("../images/bgImage.jpg");
+	background-position: -36px 50%;
+	background-size: 110%;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	}
+
+.playerInfo {
+	display: none;
+	padding: 8px 0;
+	position: absolute;
+	right: 50px;
+}
+
+.imgContainer {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	z-index: 7;
+}
+
+.small {
+	bottom: -3px;
+	right: 120px;
+	width: initial;
+}
+
+#bigImg {
+	width: 300px;
+	z-index: 6;
+}
+
+#smallImg {
+	width: 100px;
+	z-index: 6;
+}
+
+#bgMain {
+	display: ;
+	position: absolute;
+	background-image: url("../images/bgImage2.jpg");
+	background-position: -36px 50%;
+	background-size: 110%;
+	width: 100%;
+	z-index: 1;
+	/*filter: grayscale(100%) opacity(.2);*/
+	}
+
+#playerSelect {
+	display: ;
+	position: relative;
+	top: 130px;
+	z-index: 4;
+}
+
+.players{
+	display: none;
+}
+
+.circle {
+	position: relative;
+	top: -15px;
+	margin: 0 20px;
+	width: 200px;
+	height: 200px;
+	border: solid #000 2px;
+	border-radius: 100%;
+	box-shadow: 2px 2px 3px #000;
+	background-color: #ccc;
+	z-index: 3;
+}
+
+.cat {
+	display: none;
+	width: 150px;
+	height: 150px;
+	padding: 0;
+}
+
+.catImg {
+	width: 100%;
+	padding: 0;
+}
+
+#movies {
+	position: absolute;
+	left: 5px;
+	padding: 0;
+}
+
+#tv {
+	position: absolute;
+	left: 205px;
+	padding: 0;
+}
+
+#games {
+	position: absolute;
+	right: 205px;
+	padding: 0;
+}
+
+#music {
+	position: absolute;
+	right: 5px;
+}
+
+#onePlayer {
+	position: absolute;
+	left: 150px;
+}
+
+#twoPlayer {
+	position: absolute;
+	right: 150px;
+}
+
+.playerImg {
+	padding: 25px;
+	width: 75%;
+}
+
+#questionBox {
+	display: none;
+	position: absolute;
+	left: 0px;
+	top: 100px;
+	border: solid #000 1px;
+	border-left: none;
+	height: 250px;
+	width: 420px;
+	text-align: center;
+}
+
+.answerBox {
+	position: absolute;
+	right: 0;
+	width: 0;
+	height: 40px;
+	border: solid #000 1px;
+	border-right: none;
+	background-color: #ccc;
+}
+
+#choiceA {
+	display: none;
+	top: 100px;
+}
+
+#choiceB {
+	display: none;
+	top: 170px;
+}
+
+#choiceC {
+	display: none;
+	top: 240px;
+}
+
+#choiceD {
+	display: none;
+	top: 310px;
+}
+
+.container {
+	display: none;
+	position: absolute;
+	top: -31px;
+	left: 20px;
+	width: 115px;
+	height: 115px;
+	border-radius: 100%;
+	background-color: #fff;
+}
+
+#circle-timer {
+	border: solid #f00 4px;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	border-radius: 100px;
+}
+
+/**
+ *	This element is created inside your target element
+ *	It is used so that your own element will not need to be altered
+ **/
+.time_circles {
+    position: relative;
+    left: -17px;
+    top: -18px;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+/**
+ *	This is all the elements used to house all text used
+ * in time circles
+ **/
+.time_circles > div {
+    position: absolute;
+    text-align: center;
+}
+
+/**
+ *	Titles (Days, Hours, etc)
+ **/
+.time_circles > div > h4 {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Century Gothic', Arial;
+}
+
+/**
+ *	Time numbers, ie: 12
+ **/
+.time_circles > div > span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: 'Century Gothic', Arial;
+    font-size: 300%;
+    margin-top: 0.4em;
+    font-weight: bold;
+}
