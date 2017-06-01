@@ -327,6 +327,7 @@ $(document).ready(function() {
           
           if(category[game.categoryPicked][game.question][$(this).attr("value")].result){
             player[a].roundPts = 10 * $("#CountDownTimer").TimeCircles().getTime().toFixed();;
+            player[a].totalPts = player[a].totalPts + player[a].roundPts;
             player[a].right++
           } else {
             player[a].roundPts = 0;
@@ -368,7 +369,7 @@ $(document).ready(function() {
     },
 
     result: function(a){
-        player[a].totalPts = player[a].totalPts + player[a].roundPts;
+       
         $("#imgResult" + a).html("<img src='assets/images/" +  player[a].img +"a.png'>").fadeIn("slow");
         $("#playerResult" + a).html(player[a].name + "<br> Score: " + player[a].totalPts + "pts").fadeIn("slow");
         $("#result" + a).fadeIn("slow");
