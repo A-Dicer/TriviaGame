@@ -802,13 +802,13 @@
         ref_date: new Date(),
         start: false,
         animation: "smooth",
-        count_past_zero: true,
-        circle_bg_color: "#60686F",
+        count_past_zero: false,
+        circle_bg_color: "#000",
         use_background: true,
         fg_width: 0.03,
         bg_width: 1.9,
         text_size: 0.07,
-        total_duration: "Auto",
+        total_duration: 10,
         direction: "Clockwise",
         use_top_frame: false,
         start_angle: 0,
@@ -831,7 +831,7 @@
             Seconds: {
                 show: true,
                 text: "Seconds",
-                color: "#F99"
+                color: "#BBFFBB"
             }
         }
     };
