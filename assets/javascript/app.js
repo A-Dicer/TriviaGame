@@ -353,7 +353,7 @@ $(document).ready(function() {
 
 
     leader: function(){
-      player[a].totalPts = player[a].totalPts + player[a].roundPts;
+
       if(game.roundNumber === "Final"){setTimeout( function() {game.final(1)}, 500);}
       else {
         console.log("leaderboard")
@@ -368,7 +368,7 @@ $(document).ready(function() {
     },
 
     result: function(a){
-        
+        player[a].totalPts = player[a].totalPts + player[a].roundPts;
         $("#imgResult" + a).html("<img src='assets/images/" +  player[a].img +"a.png'>").fadeIn("slow");
         $("#playerResult" + a).html(player[a].name + "<br> Score: " + player[a].totalPts + "pts").fadeIn("slow");
         $("#result" + a).fadeIn("slow");
