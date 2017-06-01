@@ -2,7 +2,7 @@ $(document).ready(function() {
   
   var clock;
   
-  function stopClock(){clearTimeout(clock); console.log("It stopped running")};
+  function stopClock(){clearTimeout(clock);};
       
   //object for the questions based on category
   var category = {
@@ -222,7 +222,6 @@ $(document).ready(function() {
       $(b).on("click", function(){
         //gets the selecteds value
         game[c] = $(this).attr("value").toLowerCase();
-        console.log(game[c] + " was selected.");
         //plays click sound
         game.click.volume = .1;
         game.click.play();
@@ -267,8 +266,7 @@ $(document).ready(function() {
     },
 
     round: function(a){
-      console.log("round " + game.roundNumber);
-      console.log("question number " + game.question)
+
       if(game.roundNumber === 3 || game.roundNumber === "Final"){game.roundNumber = "Final";
         $("h2").html(game.roundNumber + " Round!").fadeIn("slow");
       } else {
@@ -281,7 +279,6 @@ $(document).ready(function() {
       $(".container").fadeIn("slow");
       //place question on page
       $("#questionBox").html(category[game.categoryPicked][game.question].Q);
-      
       
       $("#choiceA").html("A: " + category[game.categoryPicked][game.question].a.answer);
       $("#choiceB").html("B: " + category[game.categoryPicked][game.question].b.answer);
@@ -308,16 +305,14 @@ $(document).ready(function() {
       }, 4000);
     
       function startClock(){
-        console.log("clock started"); 
         clock = setTimeout(function(){game.roundEnd(a); 
         player[a].noAnswer++
         player[a].roundPts = 0;
-        console.log(player[a].noAnswer);}, 10000); }
+      }, 10000); }
       
       setTimeout( function(){
         
-        $("#CountDownTimer").TimeCircles().start();
-        
+        $("#CountDownTimer").TimeCircles().start(); 
         startClock();
 
         $(".answerBox").on("click", function(){
@@ -357,13 +352,11 @@ $(document).ready(function() {
 
       if(game.roundNumber === "Final"){setTimeout( function() {game.final(1)}, 500);}
       else {
-        console.log("leaderboard")
         $("#bgImage").css({"background-image" : "url(assets/images/bgImage1.jpg)"});
         $("#bgImage").animate({ "opacity" : "1"}, 2000);
         $("h2").html("Lets See How You Did").fadeIn("slow");
         $("#leader").fadeIn("slow");
         $(".result").css({"background-color" : "#ccc"});
-        console.log(game.roundNumber);
         setTimeout( function() {game.result(1)}, 500);
       }
     },
@@ -371,14 +364,14 @@ $(document).ready(function() {
     result: function(a){
        
         $("#imgResult" + a).html("<img src='assets/images/" +  player[a].img +"a.png'>").fadeIn("slow");
-        $("#playerResult" + a).html(player[a].name + "<br> Score: " + player[a].totalPts + "pts").fadeIn("slow");
+        $("#playerResult" + a).html(player[a].name + "<br> Score: ").fadeIn("slow");
         $("#result" + a).fadeIn("slow");
         
         setTimeout ( function (){
           if(player[a].roundPts === 0){
           $("#result" + a).css({"background-color" : "#f00"})
-          } else {
-         
+          $("#playerResult" + a).html(player[a].name + "<br> Score: " + player[a].totalPts + "pts")
+          } else {  
           $("#result" + a).css({"background-color" : "#BBFFBB"})
           $("#playerResult" + a).html(player[a].name + "<br> Score: " + player[a].totalPts + "pts") 
           }
