@@ -419,7 +419,7 @@ $(document).ready(function() {
               setTimeout( function() { game.final(2)}, 500); 
             }
           } else {  
-          show player one
+          //show player one
           $("h2").html("Great Job!");
           $("#replay").fadeIn("slow");
 
