@@ -274,7 +274,7 @@ $(document).ready(function() {
       $(".container").fadeIn("slow");  
       //place question on page
       $("#questionBox").html(category[game.categoryPicked][game.question].Q);
-      //store answers
+      //set answers
       $("#choiceA").html("A: " + category[game.categoryPicked][game.question].a.answer);
       $("#choiceB").html("B: " + category[game.categoryPicked][game.question].b.answer);
       $("#choiceC").html("C: " + category[game.categoryPicked][game.question].c.answer);
@@ -290,7 +290,7 @@ $(document).ready(function() {
           $(this).css({"border" : "solid #000 1px"});
         }
       );
-      //show answer on page
+      //show answers on page
       setTimeout( function(){
       setTimeout(function(){$("#choiceA").fadeIn("slow")}, 1000);
       setTimeout(function(){$("#choiceB").fadeIn("slow")}, 1500);
@@ -329,10 +329,14 @@ $(document).ready(function() {
       }, 7000);
     },
 
+    //runs when an answer is selected or time runs out
     roundEnd: function(a){
+      //changes elements on page
       $(".answerBox").off();
       $(".answerBox, #questionBox, h2, .container, .small, .playerInfo").fadeOut("slow");
       $("#CountDownTimer").TimeCircles().destroy();
+        
+        //if there are two players it has too loop through it
         if(game.playerCount === "two" && a !== 2 ){
           setTimeout( function() { game.ready(2)}, 1000); 
         } else {
@@ -341,9 +345,12 @@ $(document).ready(function() {
       game.question++
     },
 
+    //start of the leader board... 
     leader: function(){
+      //if its the last round we go to final
       if(game.roundNumber === "Final"){setTimeout( function() {game.final(1)}, 500);}
       else {
+        //changes elements on the page
         $("#bgImage").css({"background-image" : "url(assets/images/bgImage1.jpg)"});
         $("#bgImage").animate({ "opacity" : "1"}, 2000);
         $("h2").html("Lets See How You Did").fadeIn("slow");
@@ -354,22 +361,28 @@ $(document).ready(function() {
     },
 
     result: function(a){     
+        //changes elements on the page
         $("#imgResult" + a).html("<img src='assets/images/" +  player[a].img +"a.png'>").fadeIn("slow");
         $("#playerResult" + a).html(player[a].name + "<br> Score: ").fadeIn("slow");
         $("#result" + a).fadeIn("slow");   
         setTimeout ( function (){
+          //if they didn't get any points
           if(player[a].roundPts === 0){
+          //change background to red
           $("#result" + a).css({"background-color" : "#f00"})
           $("#playerResult" + a).html(player[a].name + "<br> Score: " + player[a].totalPts + "pts")
           } else {  
+          //change background to green
           $("#result" + a).css({"background-color" : "#BBFFBB"})
           $("#playerResult" + a).html(player[a].name + "<br> Score: " + player[a].totalPts + "pts") 
           }
         }, 2000)   
         setTimeout ( function(){
+           //if there are two players it has too loop through it
           if(game.playerCount === "two" && a !== 2 ){
             setTimeout( function() { game.result(2)}, 500); 
           } else {
+            //remove elements on page add one to roundNumber and start the next round
             $("#leader, .result, .imgResult, .playerResult, h3").fadeOut("slow");
             setTimeout( function() { game.ready(1)}, 500)
             game.roundNumber++
@@ -378,27 +391,35 @@ $(document).ready(function() {
     },
 
     final: function(a){
+      //changes elements on the page
       $("h2").html("Final Results For " + player[a].name).fadeIn("slow");
       $(".big").html("<img src='assets/images/" +  player[a].img +".png' id='bigImg'>").css({"left" : "-100px", "bottom" : "25px"}).fadeIn("slow");
       $("#bgImage").css({"background-image" : "url(assets/images/bgImage.jpg)"});
       $("#bgImage").animate({ "opacity" : "1"}, 2000);   
+      //sets the results in the answerBox's
       setTimeout( function(){
       setTimeout(function(){$("#choiceA").html("Total Score: " + player[a].totalPts).fadeIn("slow")}, 1000);
       setTimeout(function(){$("#choiceB").html("Total Right: " + player[a].right).fadeIn("slow")}, 1500);
       setTimeout(function(){$("#choiceC").html("Total Wrong: " + player[a].wrong).fadeIn("slow")}, 2000);
       setTimeout(function(){$("#choiceD").html("Total Not Answered: " + player[a].noAnswer).fadeIn("slow")}, 2500);
       }, 2000); 
+    
       setTimeout ( function(){
+          //check to see if there are two players 
           if(game.playerCount === "two" && a !== 2 || game.check === true){
+            // check to see if you have shown both players
             if(game.check){
               $("h2, .big, .answerBox").fadeOut("slow")
+              //show winner
               setTimeout(game.winner, 500);
             } else {
+              //show player two
               $("h2, .big, .answerBox").fadeOut("slow")
               game.check = true
               setTimeout( function() { game.final(2)}, 500); 
             }
           } else {  
+          show player one
           $("h2").html("Great Job!");
           $("#replay").fadeIn("slow");
 
@@ -408,22 +429,26 @@ $(document).ready(function() {
     },
 
     winner: function(){
+      //check to see if player one is the winner
       if(player[1].totalPts > player[2].totalPts){
         $("h2").html("The Winner Is " + player[1].name + "!").fadeIn("slow");
         $(".big").html("<img src='assets/images/" +  player[1].img +".png' id='bigImg'>").css({"left" : "0"}).fadeIn("slow");
+      // check to see if player two is the winner
       } else if(player[1].totalPts < player[2].totalPts){
         $("h2").html("The Winner Is " + player[2].name + "!").fadeIn("slow");
         $(".big").html("<img src='assets/images/" +  player[2].img +".png' id='bigImg'>").css({"left" : "0"}).fadeIn("slow");
+      //call it a tie
       } else {
         $("h2").html("You Tied!").fadeIn("slow");
       }
+      //reload the page to replay
       $("#replay").fadeIn("slow")
       setTimeout( game.replay, 8000);
     },
 
     replay: function(){location.reload();},
   }
-  
+
 //sets the click to start game
 $("body").on("click", game.play);
 
