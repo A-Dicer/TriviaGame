@@ -194,7 +194,7 @@ $(document).ready(function() {
       game.bgMusic.loop = "loop";
       game.bgMusic.play();
       //runs the select method with amount of players argument
-      setTimeout( function() { game.select("How Manay Players Will There Be?", ".players", "playerCount")}, 4500);
+      setTimeout( function() { game.select("How Many Players Will There Be?", ".players", "playerCount")}, 4500);
     },
 
     //selects how many players
@@ -422,8 +422,7 @@ $(document).ready(function() {
           //show player one
           $("h2").html("Great Job!");
           $("#replay").fadeIn("slow");
-
-         setTimeout( game.replay, 8000);
+          setTimeout( game.replay, 8000);
           }
         }, 8000);  
     },
