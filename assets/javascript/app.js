@@ -127,7 +127,7 @@ $(document).ready(function() {
                   a: {answer: "Madison, WI",   result: false, },
                   b: {answer: "Chicago, IL",   result: false, },
                   c: {answer: "Milwaukee, WI", result: true,  },
-                  d: {answer: "Chicago, IL",   result: false, },
+                  d: {answer: "Orlando, FL",   result: false, },
             },
             1: {  Q: "Battlestar Galatica first aired on ABC in what year?",
                   a: {answer: "1972",  result: false, },
