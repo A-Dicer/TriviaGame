@@ -107,9 +107,6 @@ p{
 	z-index: 4;
 }
 
-
-
-
 #play {
 	position: absolute;
 	width: 150px;
@@ -349,8 +346,6 @@ p{
 	z-index: 7;
 }
 
-
-}
 #circle-timer {
 	border: solid #f00 4px;
 	width: 100px;
