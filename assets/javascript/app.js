@@ -244,7 +244,7 @@ $(document).ready(function() {
       //animates the elements
       $("#bgImage").animate({ "opacity" : ".0"}, 2000);
       $("h2").html("How To Play").fadeIn("slow");
-      $("p").html("Welcome to the Super Fantastic Trivia Game! Here is how it works. Each player will have 10 seconds to answer a Super Fatastic Trivia question. The faster you answer the more points you will recieve. The person with the most points after three rounds wins!").fadeIn("slow");
+      $("p").html("Welcome to the Super Fantastic Trivia Game! Here is how it works. Each player will have 10 seconds to answer a Super Fantastic Trivia question. The faster you answer the more points you will receive. The person with the most points after three rounds wins!").fadeIn("slow");
       setTimeout( function(){
         $("h2").fadeOut("slow");
         $("p").fadeOut("slow");
